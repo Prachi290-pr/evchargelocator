@@ -4,9 +4,10 @@
   align-items: center;
   padding: 0 20px;
   position: fixed;
+  top: 0px;
   width: 100%;
   z-index: 300;
-  background-color: #333;
+  background-color: #082c22;
   color: #fff;
   height: 60px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -53,15 +54,19 @@
   color: #f0f0f0;
 }
 
-/* Dropdown Styling */
-.services-dropdown {
+/* Dropdown Styling for Services and Electric dropdowns */
+.services-dropdown, 
+.electric-dropdown {
   position: relative;
 }
 
-.services-dropdown:hover .dropdown-menu {
+/* Ensure dropdown is displayed on hover */
+.services-dropdown:hover .dropdown-menu,
+.electric-dropdown:hover .dropdown-menu {
   display: block;
 }
 
+/* Dropdown Menu Styling */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -102,4 +107,30 @@
 
 .navbar-right button:hover {
   background-color: #0056b3;
+}
+
+/* Additional media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .navbar-left, .navbar-right {
+    flex-direction: column;
+    margin-right: 0;
+  }
+  
+  .navbar-link {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .dropdown-menu {
+    left: 0;
+    right: auto;
+    top: auto;
+    bottom: -50px;
+    min-width: unset;
+  }
 }
